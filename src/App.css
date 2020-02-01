@@ -1,38 +1,83 @@
-.App {
+html {
+  box-sizing: border-box;
+  background-size: cover;
+  background-image: url('https://w.wallhaven.cc/full/95/wallhaven-952x8d.png');
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container{ 
+  padding: 20px;
+  max-width: 500px;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 0 0 10px rgba(0,0,0,0.1);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container form {
+  margin-top: 20px;
+}
+
+.container form input, button {
+  padding: 10px;
+  outline: 0;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.ulist {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  list-style: none;
+}
+
+.indiList {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px 0px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.indiList input {
+  margin-right: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.indiList label {
+  flex: 1;
+  cursor: pointer;
+}
+
+.indiList input {
+  appearance: none;
+  background-color: #fafafa;
+	border: 1px solid #030303;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+	padding: 9px ;
+	display: flex;
+  position: relative;
+  outline: none;
+}
+
+.indiList input + label:before{
+  margin-right: 10px;
+}
+
+.indiList input:checked + label:before {
+	background-color: #e9ecee;
+	border: 1px solid #adb8c0;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+	color: #99a1a7;
+}
+
+.indiList input:checked:after {
+  content: '🌮' ;
+	position: absolute;
+  top: 0px;
+  left: 0.5px;
 }
