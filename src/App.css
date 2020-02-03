@@ -1,7 +1,6 @@
 html {
   box-sizing: border-box;
-  background-size: cover;
-  background-image: url('https://w.wallhaven.cc/full/95/wallhaven-952x8d.png');
+  background-color: rgb(245, 209, 177);
   min-height: 100vh;
   min-width: 100vw;
   display: flex;
@@ -76,7 +75,7 @@ html {
 }
 
 .indiList input:checked:after {
-  content: '🌮' ;
+  content: '🍰'   ;
 	position: absolute;
   top: 0px;
   left: 0.5px;
