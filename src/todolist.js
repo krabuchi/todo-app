@@ -11,7 +11,8 @@ function TodoList(props) {
           checked={props.item.checked}
           onChange={() => props.handleChange(props.item.id)}
         />
-        <label>{props.item.text}</label><span onClick={() =>props.handleRemove(props.item.id)}>❌</span>
+        <label>{props.item.text}</label>
+        <span onClick={() =>props.handleRemove(props.item.id)}>❌</span>
       </div>
     )
   }

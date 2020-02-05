@@ -13,6 +13,10 @@ class TodoApp extends React.Component {
       this.change =  this.change.bind(this);
       this.handleRemove = this.handleRemove.bind(this);
     }
+
+    componentDidMount() {
+      this.setState({items:JSON.parse(localStorage.getItem('items'))|| []});
+    }
     
     handleChange(e){
       this.setState({text: e.target.value})
@@ -20,17 +24,19 @@ class TodoApp extends React.Component {
     
     handleSubmit(e) {
       e.preventDefault();
-      if(!this.state.text.length) {return;}
+      if(!this.state.text.length) return;
       
-      this.setState(state  => ({
-            items: state.items.concat({
-              id:Date.now(),
-              text: this.state.text,
-              checked:false
-            }),
-            text: ''
-          })
+      this.setState({
+          items: this.state.items.concat({
+            id: Date.now(),
+            text: this.state.text,
+            checked: false
+          }),
+          text: ''
+        }
       );
+      console.log(this.state.items)
+      localStorage.setItem('items', JSON.stringify(this.state.items));
     }
     
     change(id) {
@@ -41,6 +47,7 @@ class TodoApp extends React.Component {
         return item;
       })
       this.setState({items: upDate});
+      localStorage.setItem('items', JSON.stringify(this.state.items));
     }
     
     handleRemove(id) {
