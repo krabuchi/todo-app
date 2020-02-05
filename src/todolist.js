@@ -6,12 +6,12 @@ function TodoList(props) {
     }
   
     return (
-      <div className="indiList" style={props.item.checked ? style: null}>
+      <div className="indiList">
         <input type="checkbox" 
           checked={props.item.checked}
           onChange={() => props.handleChange(props.item.id)}
         />
-        <label>{props.item.text}</label>
+        <label style={props.item.checked ? style: null}>{props.item.text}</label>
         <span onClick={() =>props.handleRemove(props.item.id)}>❌</span>
       </div>
     )
